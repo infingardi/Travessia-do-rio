@@ -1,4 +1,5 @@
-from anytree import Node
+from anytree import Node, RenderTree
+from anytree.exporter import DotExporter
 
 # Inicialização dos estados
 initial_state = (frozenset({"policial", "prisioneira", "pai", "mãe", "filho1", "filho2", "filha1", "filha2"}), frozenset(), "esquerda")
@@ -58,3 +59,11 @@ def get_next_states(state, path):
             if is_valid(new_state) and new_state not in path:
                 next_states.append((new_state, rule))
     return next_states
+
+
+# Função para visualizar a árvore de busca
+def export_tree(root, filename="tree"):
+    for pre, fill, node in RenderTree(root):
+        print(f"{pre}{node.name}")
+    
+    DotExporter(root).to_picture("Trees/" + filename + ".png")
