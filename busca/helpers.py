@@ -1,5 +1,6 @@
-from anytree import Node, RenderTree
+from anytree import RenderTree
 from anytree.exporter import DotExporter
+from graphviz import Source
 
 # Inicialização dos estados
 initial_state = (frozenset({"policial", "prisioneira", "pai", "mãe", "filho1", "filho2", "filha1", "filha2"}), frozenset(), "esquerda")
@@ -61,9 +62,18 @@ def get_next_states(state, path):
     return next_states
 
 
+def get_path_from_node(node):
+    path = []
+    while node:
+        path.insert(0, node.state)
+        node = node.parent
+    return path
+
 # Função para visualizar a árvore de busca
 def export_tree(root, filename="tree"):
     for pre, fill, node in RenderTree(root):
         print(f"{pre}{node.name}")
     
-    DotExporter(root).to_picture("Trees/" + filename + ".png")
+    path = f"Trees/{filename}"
+    DotExporter(root).to_dotfile(path + ".dot")
+    Source.from_file(path + ".dot").render(path, format="png", cleanup=True)

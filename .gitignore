@@ -1,0 +1,3 @@
+.mypy_cache
+.venv
+./busca/__pycache__/**
