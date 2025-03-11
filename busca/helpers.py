@@ -69,11 +69,29 @@ def get_path_from_node(node):
         node = node.parent
     return path
 
+def anytree_to_dot(root, filename="tree"):
+    def stringify_node(node):
+        node_cost = f"\n{node.cost_global}" if hasattr(node, "cost_global")  else ""
+        return f"L: {" ".join(node.state[0])}\nR: {" ".join(node.state[1])}{node_cost}"
+    
+    def write_tree(root, f):
+        f.write(f"{root.name} [label=\"{stringify_node(root)}\"]\n")
+        for child in root.children:
+            edge_cost = f" [label=\"{child.cost_local}\"]" if hasattr(child, "cost_local") else ""
+            f.write(f"{root.name} -> {child.name}{edge_cost}\n")
+            write_tree(child, f)
+    
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write("digraph {\n")
+        write_tree(root, f)
+        f.write("}\n")
+
+    
 # Função para visualizar a árvore de busca
 def export_tree(root, filename="tree"):
-    for pre, fill, node in RenderTree(root):
-        print(f"{pre}{node.name}")
+    # for pre, fill, node in RenderTree(root):
+    #     print(f"{pre}{node.name} (Node Weight: {node.cost_global})")
     
     path = f"Trees/{filename}"
-    DotExporter(root).to_dotfile(path + ".dot")
+    anytree_to_dot(root, path + ".dot")
     Source.from_file(path + ".dot").render(path, format="png", cleanup=True)

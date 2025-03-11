@@ -6,14 +6,14 @@ from busca.helpers import export_tree
 from anytree import Node
 
 if __name__ == "__main__":
-    # solution, root = solve_backtracking()
-    # export_tree(root, "backtrackingTree")
+    solution, root = solve_backtracking()
+    export_tree(root, "backtrackingTree")
 
-    # solution, root = solve_bfs()
-    # export_tree(root, "larguraTree")
+    solution, root = solve_bfs()
+    export_tree(root, "larguraTree")
 
-    # solution, root = solve_dfs()
-    # export_tree(root, "profundidadeTree")
+    solution, root = solve_dfs()
+    export_tree(root, "profundidadeTree")
 
     solution, root = solve_ordered_search()
     export_tree(root, "ordenadaTree")

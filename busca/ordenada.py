@@ -12,7 +12,7 @@ def solve_ordered_search():
     def get_heuristics(current_state, next_state):
       left, right, boat_side = current_state
       next_left, next_right, next_boat_side = next_state
-      boat = next_left - left if boat_side == "esquerda" else next_right - right
+      boat = (next_left - left) if boat_side == "direita" else (next_right - right)
       base_value = 1 if boat_side == "esquerda" else -1
       value = len(boat) * base_value
       for p in boat:
@@ -21,7 +21,7 @@ def solve_ordered_search():
       return value
     
     i = 0
-    root = Node(name="Root", parent=None, state=initial_state, cost_local=0, cost_global=0)
+    root = Node(name=0, parent=None, state=initial_state, cost_local=0, cost_global=0)
     open_nodes = [root]
     solution = None
     while open_nodes:
@@ -34,7 +34,7 @@ def solve_ordered_search():
           i += 1
           heuristics = get_heuristics(current_node.state, next_state)
           node = Node(
-            name=f"Node-{i}", 
+            name=i, 
             parent=current_node, 
             state=next_state, 
             cost_local=heuristics, 

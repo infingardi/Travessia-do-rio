@@ -3,7 +3,7 @@ from busca.helpers import initial_state, goal_state, get_next_states
 
 # Função para resolver com busca em profundidade
 def solve_dfs():
-    root = Node(name="Root", state=initial_state, visited=False, rule=None, possible_rules=None)
+    root = Node(name=0, state=initial_state, visited=False, rule=None, possible_rules=None)
     stack = [(root, [initial_state])]  # Usando pilha (stack) para DFS
     i = 0  # Contador para identificar cada nó
 
@@ -21,7 +21,7 @@ def solve_dfs():
 
         for next_state, rule in current_node.possible_rules:
             i += 1
-            next_node = Node(name=f"Node-{i}", state=next_state, visited=False, rule=rule, parent=current_node)
+            next_node = Node(name=i, state=next_state, visited=False, rule=rule, parent=current_node)
             stack.append((next_node, path + [next_state]))  # Adiciona ao final da pilha
 
     return None
