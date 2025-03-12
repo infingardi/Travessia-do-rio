@@ -41,13 +41,16 @@ def is_valid(state):
     return True
 
 # Função para gerar os próximos estados
-def get_next_states(state, path):
+def get_next_states(state, visited):
     left, right, boat = state
     next_states = []
     current_side = left if boat == "esquerda" else right
+
     for rule in rules:
         if rule.issubset(current_side):
-            new_left, new_right = set(left), set(right)
+            new_left = set(left)
+            new_right = set(right)
+            
             if boat == "esquerda":
                 new_left -= rule
                 new_right |= rule
@@ -56,11 +59,12 @@ def get_next_states(state, path):
                 new_right -= rule
                 new_left |= rule
                 new_boat = "esquerda"
+            
             new_state = (frozenset(new_left), frozenset(new_right), new_boat)
-            if is_valid(new_state) and new_state not in path:
+            if is_valid(new_state) and new_state not in visited:
                 next_states.append((new_state, rule))
+    
     return next_states
-
 
 def get_path_from_node(node):
     path = []
@@ -69,29 +73,40 @@ def get_path_from_node(node):
         node = node.parent
     return path
 
-def anytree_to_dot(root, filename="tree"):
-    def stringify_node(node):
-        node_cost = f"\n{node.cost_global}" if hasattr(node, "cost_global")  else ""
-        return f"L: {" ".join(node.state[0])}\nR: {" ".join(node.state[1])}{node_cost}"
+def export_tree(root, filename="tree", open_states=None, closed_states=None):
+    dot_content = ["digraph G {"]
     
-    def write_tree(root, f):
-        f.write(f"{root.name} [label=\"{stringify_node(root)}\"]\n")
-        for child in root.children:
-            edge_cost = f" [label=\"{child.cost_local}\"]" if hasattr(child, "cost_local") else ""
-            f.write(f"{root.name} -> {child.name}{edge_cost}\n")
-            write_tree(child, f)
-    
-    with open(filename, "w", encoding="utf-8") as f:
-        f.write("digraph {\n")
-        write_tree(root, f)
-        f.write("}\n")
+    # Adiciona todos os nós e conexões da árvore
+    for _, _, node in RenderTree(root):
+        # Formata o estado do nó sem exibir o "Barco"
+        left = ', '.join(sorted(node.state[0]))
+        right = ', '.join(sorted(node.state[1]))
+        dot_content.append(f'{node.name} [label="L: {left}\\nR: {right}"]')
+        
+        # Adiciona conexão com o pai
+        if node.parent:
+            dot_content.append(f'{node.parent.name} -> {node.name}')
 
-    
-# Função para visualizar a árvore de busca
-def export_tree(root, filename="tree"):
-    # for pre, fill, node in RenderTree(root):
-    #     print(f"{pre}{node.name} (Node Weight: {node.cost_global})")
-    
+    # Adiciona legenda com abertos/fechados
+    if open_states or closed_states:
+        legend = ['subgraph cluster_legend {', 'label="Legenda";']
+        
+        if open_states:
+            estados = "\\n".join([f"L: {', '.join(sorted(s[0]))}\\nR: {', '.join(sorted(s[1]))}" for s in open_states])
+            legend.append('open [label="Abertos:\\n' + estados + '", shape=box, color=green];')
+            
+        if closed_states:
+            estados = "\\n".join([f"L: {', '.join(sorted(s[0]))}\\nR: {', '.join(sorted(s[1]))}" for s in closed_states])
+            legend.append('closed [label="Fechados:\\n' + estados + '", shape=box, color=red];')
+            
+        legend.append('}')
+        dot_content.extend(legend)
+
+    dot_content.append("}")  # Fecha o digraph
+
+    # Gera o arquivo e a imagem
     path = f"Trees/{filename}"
-    anytree_to_dot(root, path + ".dot")
-    Source.from_file(path + ".dot").render(path, format="png", cleanup=True)
+    with open(f"{path}.dot", "w", encoding="utf-8") as f:
+        f.write("\n".join(dot_content))
+    
+    Source.from_file(f"{path}.dot").render(path, format="png", cleanup=True)
