@@ -1,7 +1,7 @@
 from anytree import Node
 from busca.helpers import get_path_from_node, initial_state, goal_state, get_next_states
 
-def solve_ordered_search():
+def solve_greedy_search():
     def insert_ordered(open_nodes, node):
       for i, n in enumerate(open_nodes):
           if n.cost_global < node.cost_global:

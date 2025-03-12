@@ -1,0 +1,161 @@
+digraph {
+0 [label="L: filha1 filha2 prisioneira filho1 pai mãe filho2 policial
+R: 
+0"]
+0 -> 1 [label="4"]
+1 [label="L: mãe filha1 filha2 filho2 filho1 pai
+R: prisioneira policial
+4"]
+1 -> 3 [label="0"]
+3 [label="L: mãe filha1 policial filha2 filho2 filho1 pai
+R: prisioneira
+4"]
+3 -> 4 [label="3"]
+4 [label="L: mãe filha2 filho2 filho1 pai
+R: prisioneira policial filha1
+7"]
+4 -> 8 [label="0"]
+8 [label="L: mãe prisioneira policial filha2 filho2 filho1 pai
+R: filha1
+7"]
+8 -> 12 [label="2"]
+12 [label="L: filha2 filho1 prisioneira filho2 policial
+R: mãe filha1 pai
+9"]
+8 -> 13 [label="2"]
+13 [label="L: filho1 prisioneira filho2 policial pai
+R: mãe filha1 filha2
+9"]
+13 -> 14 [label="-2"]
+14 [label="L: mãe filho1 filha1 prisioneira filho2 policial pai
+R: filha2
+7"]
+13 -> 15 [label="-1"]
+15 [label="L: mãe filho1 prisioneira filho2 policial pai
+R: filha2 filha1
+8"]
+15 -> 16 [label="4"]
+16 [label="L: mãe filho2 filho1 pai
+R: prisioneira filha2 filha1 policial
+12"]
+15 -> 17 [label="2"]
+17 [label="L: prisioneira filho2 filho1 policial
+R: filha2 mãe filha1 pai
+10"]
+17 -> 18 [label="-1"]
+18 [label="L: pai prisioneira filho2 filho1 policial
+R: filha2 mãe filha1
+9"]
+18 -> 19 [label="4"]
+19 [label="L: filho2 filho1 pai
+R: mãe filha1 filha2 prisioneira policial
+13"]
+19 -> 22 [label="-2"]
+22 [label="L: mãe filha1 filho2 filho1 pai
+R: filha2 prisioneira policial
+11"]
+19 -> 23 [label="-2"]
+23 [label="L: mãe filha2 filho2 filho1 pai
+R: prisioneira filha1 policial
+11"]
+19 -> 24 [label="-1"]
+24 [label="L: mãe filho2 filho1 pai
+R: prisioneira filha2 filha1 policial
+12"]
+24 -> 25 [label="2"]
+25 [label="L: filho2 filho1
+R: filha2 mãe filha1 prisioneira policial pai
+14"]
+25 -> 26 [label="0"]
+26 [label="L: prisioneira filho2 filho1 policial
+R: filha2 mãe filha1 pai
+14"]
+25 -> 27 [label="-1"]
+27 [label="L: filho2 filho1 pai
+R: mãe filha1 filha2 prisioneira policial
+13"]
+27 -> 28 [label="2"]
+28 [label="L: filho2
+R: mãe filho1 filha1 pai filha2 prisioneira policial
+15"]
+28 -> 30 [label="0"]
+30 [label="L: prisioneira filho2 policial
+R: mãe filha1 filha2 filho1 pai
+15"]
+30 -> 34 [label="3"]
+34 [label="L: prisioneira
+R: mãe filha1 policial filha2 filho2 filho1 pai
+18"]
+34 -> 35 [label="0"]
+35 [label="L: prisioneira policial
+R: mãe filha1 filha2 filho2 filho1 pai
+18"]
+35 -> 39 [label="4"]
+39 [label="L: 
+R: filha1 prisioneira filha2 filho1 pai mãe filho2 policial
+22"]
+34 -> 36 [label="-1"]
+36 [label="L: prisioneira policial filha1
+R: mãe filha2 filho2 filho1 pai
+17"]
+34 -> 37 [label="-1"]
+37 [label="L: prisioneira policial filha2
+R: mãe filha1 filho2 filho1 pai
+17"]
+34 -> 38 [label="-1"]
+38 [label="L: prisioneira filho1 policial
+R: mãe filha1 filha2 filho2 pai
+17"]
+28 -> 31 [label="-2"]
+31 [label="L: mãe filho2 pai
+R: prisioneira filha1 filha2 filho1 policial
+13"]
+27 -> 29 [label="2"]
+29 [label="L: filho1
+R: mãe filha1 pai filha2 filho2 prisioneira policial
+15"]
+29 -> 32 [label="0"]
+32 [label="L: prisioneira filho1 policial
+R: mãe filha1 filha2 filho2 pai
+15"]
+29 -> 33 [label="-2"]
+33 [label="L: mãe filho1 pai
+R: filha1 filha2 filho2 prisioneira policial
+13"]
+18 -> 20 [label="2"]
+20 [label="L: prisioneira filho2 policial
+R: mãe filha1 filha2 filho1 pai
+11"]
+18 -> 21 [label="2"]
+21 [label="L: prisioneira filho1 policial
+R: mãe filha1 filha2 filho2 pai
+11"]
+3 -> 5 [label="3"]
+5 [label="L: mãe filha1 filho2 filho1 pai
+R: prisioneira policial filha2
+7"]
+5 -> 9 [label="0"]
+9 [label="L: mãe filha1 policial prisioneira filho2 filho1 pai
+R: filha2
+7"]
+3 -> 6 [label="3"]
+6 [label="L: mãe filha1 filha2 filho2 pai
+R: prisioneira filho1 policial
+7"]
+6 -> 10 [label="0"]
+10 [label="L: mãe filha1 policial filha2 filho2 prisioneira pai
+R: filho1
+7"]
+3 -> 7 [label="3"]
+7 [label="L: mãe filha1 filha2 filho1 pai
+R: prisioneira filho2 policial
+7"]
+7 -> 11 [label="0"]
+11 [label="L: mãe prisioneira filha1 policial filha2 filho1 pai
+R: filho2
+7"]
+0 -> 2 [label="2"]
+2 [label="L: filho1 filha1 filha2 filho2 prisioneira policial
+R: mãe pai
+2"]
+}
