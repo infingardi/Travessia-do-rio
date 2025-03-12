@@ -12,8 +12,8 @@ if __name__ == "__main__":
     solution, root = solve_bfs()
     export_tree(root, "larguraTree")
 
-    solution, root = solve_dfs()
-    export_tree(root, "profundidadeTree")
+    path, root, abertos, fechados = solve_dfs()
+    export_tree(root, "profundidadeTree", abertos, fechados)
 
     solution, root = solve_ordered_search()
     export_tree(root, "ordenadaTree")
