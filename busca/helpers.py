@@ -73,40 +73,47 @@ def get_path_from_node(node):
         node = node.parent
     return path
 
-def export_tree(root, filename="tree", open_states=None, closed_states=None):
-    dot_content = ["digraph G {"]
+def anytree_to_dot(root, filename="tree.dot", open_states=None, closed_states=None):
+    def stringify_node(node):
+        node_cost = f"\n{node.cost_global}" if hasattr(node, "cost_global") else ""
+        return f"L: {' '.join(node.state[0])}\nR: {' '.join(node.state[1])}{node_cost}"
     
-    # Adiciona todos os nós e conexões da árvore
-    for _, _, node in RenderTree(root):
-        # Formata o estado do nó sem exibir o "Barco"
-        left = ', '.join(sorted(node.state[0]))
-        right = ', '.join(sorted(node.state[1]))
-        dot_content.append(f'{node.name} [label="L: {left}\\nR: {right}"]')
-        
-        # Adiciona conexão com o pai
-        if node.parent:
-            dot_content.append(f'{node.parent.name} -> {node.name}')
-
-    # Adiciona legenda com abertos/fechados
-    if open_states or closed_states:
-        legend = ['subgraph cluster_legend {', 'label="Legenda";']
+    def write_tree(root, f):
+        f.write(f"{root.name} [label=\"{stringify_node(root)}\"]\n")
+        for child in root.children:
+            edge_cost = f" [label=\"{child.cost_local}\"]" if hasattr(child, "cost_local") else ""
+            f.write(f"{root.name} -> {child.name}{edge_cost}\n")
+            write_tree(child, f)
+    
+    # Nova subfunção responsável por renderizar as listas de estados abertos e fechados
+    def write_legend(f, open_states, closed_states):
+        f.write('subgraph cluster_legend {\n')
+        f.write('label="Legenda";\n')
         
         if open_states:
-            estados = "\\n".join([f"L: {', '.join(sorted(s[0]))}\\nR: {', '.join(sorted(s[1]))}" for s in open_states])
-            legend.append('open [label="Abertos:\\n' + estados + '", shape=box, color=green];')
-            
+            open_label = "Abertos:\\n" + "\\n".join(
+                [f"L: {', '.join(sorted(s[0]))}\\nR: {', '.join(sorted(s[1]))}" for s in open_states]
+            )
+            f.write(f'open [label="{open_label}", shape=box, color=green];\n')
+        
         if closed_states:
-            estados = "\\n".join([f"L: {', '.join(sorted(s[0]))}\\nR: {', '.join(sorted(s[1]))}" for s in closed_states])
-            legend.append('closed [label="Fechados:\\n' + estados + '", shape=box, color=red];')
-            
-        legend.append('}')
-        dot_content.extend(legend)
-
-    dot_content.append("}")  # Fecha o digraph
-
-    # Gera o arquivo e a imagem
-    path = f"Trees/{filename}"
-    with open(f"{path}.dot", "w", encoding="utf-8") as f:
-        f.write("\n".join(dot_content))
+            closed_label = "Fechados:\\n" + "\\n".join(
+                [f"L: {', '.join(sorted(s[0]))}\\nR: {', '.join(sorted(s[1]))}" for s in closed_states]
+            )
+            f.write(f'closed [label="{closed_label}", shape=box, color=red];\n')
+        
+        f.write("}\n")
     
-    Source.from_file(f"{path}.dot").render(path, format="png", cleanup=True)
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write("digraph {\n")
+        write_tree(root, f)
+        if open_states or closed_states:
+            write_legend(f, open_states, closed_states)
+        f.write("}\n")
+
+
+def export_tree(root, filename="tree", open_states=None, closed_states=None):
+    # Gera o caminho do arquivo DOT dentro da pasta Trees
+    path = f"Trees/{filename}"
+    anytree_to_dot(root, path + ".dot", open_states, closed_states)
+    Source.from_file(path + ".dot").render(path, format="png", cleanup=True)
