@@ -3,8 +3,8 @@ from busca.helpers import initial_state, goal_state, get_next_states, a_star_heu
 
 # Função para resolver com busca A*
 def solve_a_star():
-    root = Node(name="Root", state=initial_state, visited=False, rule=None, possible_rules=None)
-    open_list = [(root, [initial_state], 0)]  # (nó, caminho, custo)
+    root = Node(name="Root", state=initial_state, visited=False, rule=None, possible_rules=None, cost_global=0)
+    open_list = [(root, [initial_state], 0)]  # (nó, caminho, custo acumulado)
     i = 0
 
     while open_list:
@@ -19,7 +19,15 @@ def solve_a_star():
 
         for next_state, rule in current_node.possible_rules:
             i += 1
-            next_node = Node(name=f"Node-{i}", state=next_state, visited=False, rule=rule, parent=current_node)
-            open_list.append((next_node, path + [next_state], cost + 1))
-
+            cost_real = cost + len(rule)  # Estratégia de custo: baseado no número de pessoas movidas
+            next_node = Node(
+                name=f"Node-{i}",
+                state=next_state,
+                visited=False,
+                rule=rule,
+                parent=current_node,
+                cost_global=cost_real
+            )
+            open_list.append((next_node, path + [next_state], cost_real))
+    
     return None
