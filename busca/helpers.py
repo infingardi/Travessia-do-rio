@@ -1,5 +1,6 @@
-from anytree import Node, RenderTree
+from anytree import RenderTree
 from anytree.exporter import DotExporter
+from graphviz import Source
 
 # Inicialização dos estados
 initial_state = (frozenset({"policial", "prisioneira", "pai", "mãe", "filho1", "filho2", "filha1", "filha2"}), frozenset(), "esquerda")
@@ -40,13 +41,16 @@ def is_valid(state):
     return True
 
 # Função para gerar os próximos estados
-def get_next_states(state, path):
+def get_next_states(state, visited):
     left, right, boat = state
     next_states = []
     current_side = left if boat == "esquerda" else right
+
     for rule in rules:
         if rule.issubset(current_side):
-            new_left, new_right = set(left), set(right)
+            new_left = set(left)
+            new_right = set(right)
+            
             if boat == "esquerda":
                 new_left -= rule
                 new_right |= rule
@@ -55,18 +59,64 @@ def get_next_states(state, path):
                 new_right -= rule
                 new_left |= rule
                 new_boat = "esquerda"
+            
             new_state = (frozenset(new_left), frozenset(new_right), new_boat)
-            if is_valid(new_state) and new_state not in path:
+            if is_valid(new_state) and new_state not in visited:
                 next_states.append((new_state, rule))
+    
     return next_states
 
+def get_path_from_node(node):
+    path = []
+    while node:
+        path.insert(0, node.state)
+        node = node.parent
+    return path
 
-# Função para visualizar a árvore de busca
-def export_tree(root, filename="tree"):
-    for pre, fill, node in RenderTree(root):
-        print(f"{pre}{node.name}")
+def anytree_to_dot(root, filename="tree.dot", open_states=None, closed_states=None):
+    def stringify_node(node):
+        node_cost = f"\n{node.cost_global}" if hasattr(node, "cost_global") else ""
+        return f"L: {' '.join(node.state[0])}\nR: {' '.join(node.state[1])}{node_cost}"
+
+    def write_tree(root, f):
+        f.write(f"{root.name} [label=\"{stringify_node(root)}\"]\n")
+        for child in root.children:
+            edge_cost = f" [label=\"{child.cost_local}\"]" if hasattr(child, "cost_local") else ""
+            f.write(f"{root.name} -> {child.name}{edge_cost}\n")
+            write_tree(child, f)
     
-    DotExporter(root).to_picture("Trees/" + filename + ".png")
+    # Nova subfunção responsável por renderizar as listas de estados abertos e fechados
+    def write_legend(f, open_states, closed_states):
+        f.write('subgraph cluster_legend {\n')
+        f.write('label="Legenda";\n')
+        
+        if open_states:
+            open_label = "Abertos:\\n" + "\\n".join(
+                [f"L: {', '.join(sorted(s[0]))}\\nR: {', '.join(sorted(s[1]))}" for s in open_states]
+            )
+            f.write(f'open [label="{open_label}", shape=box, color=green];\n')
+        
+        if closed_states:
+            closed_label = "Fechados:\\n" + "\\n".join(
+                [f"L: {', '.join(sorted(s[0]))}\\nR: {', '.join(sorted(s[1]))}" for s in closed_states]
+            )
+            f.write(f'closed [label="{closed_label}", shape=box, color=red];\n')
+        
+        f.write("}\n")
+    
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write("digraph {\n")
+        write_tree(root, f)
+        if open_states or closed_states:
+            write_legend(f, open_states, closed_states)
+        f.write("}\n")
+
+
+def export_tree(root, filename="tree", open_states=None, closed_states=None):
+    # Gera o caminho do arquivo DOT dentro da pasta Trees
+    path = f"Trees/{filename}"
+    anytree_to_dot(root, path + ".dot", open_states, closed_states)
+    Source.from_file(path + ".dot").render(path, format="png", cleanup=True)
 
 def a_star_heuristic(state):
     """
