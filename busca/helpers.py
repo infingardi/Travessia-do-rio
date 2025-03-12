@@ -67,3 +67,11 @@ def export_tree(root, filename="tree"):
         print(f"{pre}{node.name}")
     
     DotExporter(root).to_picture("Trees/" + filename + ".png")
+
+def a_star_heuristic(state):
+    """
+    Função heurística para o algoritmo A*.
+    Mede a quantidade de pessoas que ainda precisam atravessar o rio.
+    """
+    left, right, boat = state
+    return len(left)  # Quanto mais pessoas na margem inicial, maior o custo estimado
