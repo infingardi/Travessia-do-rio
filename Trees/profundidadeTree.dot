@@ -1,213 +1,413 @@
 digraph {
-0 [label="L: filho1 filha1 policial prisioneira filha2 filho2 mãe pai
-R: "]
-0 -> 1
-1 [label="L: filho1 filha1 filha2 filho2 mãe pai
-R: policial prisioneira"]
-1 -> 3
-3 [label="L: filho1 filha1 filha2 policial filho2 mãe pai
-R: prisioneira"]
-3 -> 4
-4 [label="L: filho1 filha2 filho2 mãe pai
-R: filha1 policial prisioneira"]
-3 -> 5
-5 [label="L: filho1 filha1 filho2 mãe pai
-R: filha2 policial prisioneira"]
-3 -> 6
-6 [label="L: filha1 filha2 filho2 mãe pai
-R: filho1 policial prisioneira"]
-3 -> 7
-7 [label="L: filho1 filha1 filha2 mãe pai
-R: filho2 policial prisioneira"]
-7 -> 8
-8 [label="L: filho1 filha1 filha2 policial prisioneira mãe pai
-R: filho2"]
-8 -> 9
-9 [label="L: filho1 filha1 filha2 policial prisioneira
-R: mãe pai filho2"]
-8 -> 10
-10 [label="L: filha1 filha2 policial prisioneira mãe
-R: filho1 pai filho2"]
-10 -> 11
-11 [label="L: filha1 filha2 policial prisioneira filho2 mãe pai
-R: filho1"]
-10 -> 12
-12 [label="L: filha1 filha2 policial prisioneira mãe pai
-R: filho1 filho2"]
-12 -> 13
+0 [label="L: pai filha2 filho2 prisioneira mãe policial filha1 filho1
+R: 
+"][color="red"]
+0 -> 1 [label="-->
+prisioneira policial
+"][color="red"]
+1 [label="L: filho2 filho1 mãe filha1 pai filha2
+R: prisioneira policial
+"][color="red"]
+1 -> 3 [label="<--
+policial
+"][color="red"]
+3 [label="L: filho2 filho1 mãe policial filha1 pai filha2
+R: prisioneira
+"][color="red"]
+3 -> 4 [label="-->
+policial filha1
+"]
+4 [label="L: filho2 mãe pai filho1 filha2
+R: prisioneira policial filha1
+"]
+3 -> 5 [label="-->
+policial filha2
+"]
+5 [label="L: filho2 mãe filha1 pai filho1
+R: prisioneira policial filha2
+"]
+3 -> 6 [label="-->
+filho1 policial
+"]
+6 [label="L: filho2 mãe filha1 pai filha2
+R: prisioneira filho1 policial
+"]
+3 -> 7 [label="-->
+filho2 policial
+"][color="red"]
+7 [label="L: mãe filha1 pai filho1 filha2
+R: prisioneira filho2 policial
+"][color="red"]
+7 -> 8 [label="<--
+prisioneira policial
+"][color="red"]
+8 [label="L: prisioneira mãe policial filha1 pai filho1 filha2
+R: filho2
+"][color="red"]
+8 -> 9 [label="-->
+pai mãe
+"]
+9 [label="L: prisioneira policial filha1 filho1 filha2
+R: filho2 pai mãe
+"]
+8 -> 10 [label="-->
+filho1 pai
+"][color="red"]
+10 [label="L: prisioneira mãe policial filha1 filha2
+R: filho2 filho1 pai
+"][color="red"]
+10 -> 11 [label="<--
+filho2 pai
+"]
+11 [label="L: prisioneira filho2 mãe policial filha1 pai filha2
+R: filho1
+"]
+10 -> 12 [label="<--
+pai
+"][color="red"]
+12 [label="L: prisioneira mãe policial filha1 pai filha2
+R: filho2 filho1
+"][color="red"]
+12 -> 13 [label="-->
+prisioneira policial
+"]
 13 [label="L: mãe filha1 pai filha2
-R: filho1 policial filho2 prisioneira"]
-12 -> 14
-14 [label="L: filha1 policial prisioneira filha2
-R: mãe filho1 pai filho2"]
-14 -> 15
-15 [label="L: filha1 policial filha2 prisioneira mãe
-R: filho1 pai filho2"]
-15 -> 16
+R: filho2 filho1 policial prisioneira
+"]
+12 -> 14 [label="-->
+pai mãe
+"][color="red"]
+14 [label="L: prisioneira policial filha1 filha2
+R: filho2 filho1 pai mãe
+"][color="red"]
+14 -> 15 [label="<--
+mãe
+"][color="red"]
+15 [label="L: prisioneira mãe policial filha1 filha2
+R: filho2 filho1 pai
+"][color="red"]
+15 -> 16 [label="-->
+prisioneira policial
+"][color="red"]
 16 [label="L: mãe filha1 filha2
-R: filho1 policial filho2 prisioneira pai"]
-16 -> 23
-23 [label="L: filho1 filha1 filha2 mãe pai
-R: prisioneira policial filho2"]
-16 -> 24
-24 [label="L: filha1 filha2 filho2 mãe pai
-R: filho1 policial prisioneira"]
-16 -> 25
+R: filho2 prisioneira policial pai filho1
+"][color="red"]
+16 -> 23 [label="<--
+filho1 pai
+"]
+23 [label="L: mãe filha1 pai filho1 filha2
+R: filho2 prisioneira policial
+"]
+16 -> 24 [label="<--
+filho2 pai
+"]
+24 [label="L: filho2 mãe filha1 pai filha2
+R: prisioneira filho1 policial
+"]
+16 -> 25 [label="<--
+pai
+"][color="red"]
 25 [label="L: mãe filha1 pai filha2
-R: filho1 policial filho2 prisioneira"]
-25 -> 26
+R: filho2 filho1 prisioneira policial
+"][color="red"]
+25 -> 26 [label="-->
+mãe pai
+"][color="red"]
 26 [label="L: filha1 filha2
-R: filho1 policial filho2 prisioneira mãe pai"]
-26 -> 27
-27 [label="L: filha1 policial prisioneira filha2
-R: mãe filho1 pai filho2"]
-26 -> 28
+R: filho2 prisioneira mãe policial pai filho1
+"][color="red"]
+26 -> 27 [label="<--
+prisioneira policial
+"]
+27 [label="L: prisioneira policial filha1 filha2
+R: filho2 filho1 mãe pai
+"]
+26 -> 28 [label="<--
+mãe
+"][color="red"]
 28 [label="L: mãe filha1 filha2
-R: filho1 policial filho2 prisioneira pai"]
-28 -> 29
+R: filho2 prisioneira filho1 policial pai
+"][color="red"]
+28 -> 29 [label="-->
+mãe filha1
+"]
 29 [label="L: filha2
-R: filho1 filha1 policial filho2 prisioneira mãe pai"]
-28 -> 30
+R: filho2 prisioneira filho1 policial mãe filha1 pai
+"]
+28 -> 30 [label="-->
+mãe filha2
+"][color="red"]
 30 [label="L: filha1
-R: filho1 filha2 policial filho2 prisioneira mãe pai"]
-30 -> 31
-31 [label="L: filha1 policial prisioneira
-R: filho1 filha2 filho2 mãe pai"]
-31 -> 33
+R: filho2 prisioneira filho1 policial mãe pai filha2
+"][color="red"]
+30 -> 31 [label="<--
+prisioneira policial
+"][color="red"]
+31 [label="L: prisioneira policial filha1
+R: filho2 mãe pai filho1 filha2
+"][color="red"]
+31 -> 33 [label="-->
+policial filha1
+"][color="red"]
 33 [label="L: prisioneira
-R: filho1 filha2 filha1 policial filho2 mãe pai"]
-33 -> 34
-34 [label="L: policial prisioneira
-R: filho1 filha2 filha1 filho2 mãe pai"]
-34 -> 68
+R: filho2 mãe policial pai filha1 filho1 filha2
+"][color="red"]
+33 -> 34 [label="<--
+policial
+"][color="red"]
+34 [label="L: prisioneira policial
+R: filho2 filho1 mãe filha1 pai filha2
+"][color="red"]
+34 -> 68 [label="-->
+prisioneira policial
+"][color="red"]
 68 [label="L: 
-R: filho1 filha1 policial prisioneira filha2 filho2 mãe pai"]
-33 -> 35
-35 [label="L: filha2 policial prisioneira
-R: filho1 filha1 filho2 mãe pai"]
-33 -> 36
-36 [label="L: filho1 policial prisioneira
-R: filha2 filha1 filho2 mãe pai"]
-33 -> 37
-37 [label="L: filho2 policial prisioneira
-R: filho1 filha2 filha1 mãe pai"]
-37 -> 38
+R: pai filha2 filho2 prisioneira mãe policial filha1 filho1
+"][color="red"]
+33 -> 35 [label="<--
+policial filha2
+"]
+35 [label="L: prisioneira policial filha2
+R: filho2 filho1 mãe filha1 pai
+"]
+33 -> 36 [label="<--
+filho1 policial
+"]
+36 [label="L: prisioneira filho1 policial
+R: filho2 mãe filha1 pai filha2
+"]
+33 -> 37 [label="<--
+filho2 policial
+"]
+37 [label="L: prisioneira filho2 policial
+R: filho1 mãe filha1 pai filha2
+"]
+37 -> 38 [label="-->
+prisioneira policial
+"]
 38 [label="L: filho2
-R: filho1 filha2 filha1 policial prisioneira mãe pai"]
-38 -> 39
-39 [label="L: mãe pai filho2
-R: filho1 filha2 filha1 policial prisioneira"]
-38 -> 40
-40 [label="L: filho1 pai filho2
-R: filha2 filha1 policial prisioneira mãe"]
-40 -> 41
+R: prisioneira filho1 mãe policial filha1 pai filha2
+"]
+38 -> 39 [label="<--
+pai mãe
+"]
+39 [label="L: filho2 pai mãe
+R: prisioneira policial filha1 filho1 filha2
+"]
+38 -> 40 [label="<--
+filho1 pai
+"]
+40 [label="L: filho2 filho1 pai
+R: prisioneira mãe policial filha1 filha2
+"]
+40 -> 41 [label="-->
+filho2 pai
+"]
 41 [label="L: filho1
-R: filha2 filha1 policial prisioneira filho2 mãe pai"]
-41 -> 67
+R: prisioneira filho2 mãe policial filha1 pai filha2
+"]
+41 -> 67 [label="<--
+mãe pai
+"]
 67 [label="L: mãe filho1 pai
-R: filha2 filha1 policial prisioneira filho2"]
-40 -> 42
-42 [label="L: filho1 filho2
-R: filha2 filha1 policial prisioneira mãe pai"]
-42 -> 43
-43 [label="L: filho1 policial filho2 prisioneira
-R: mãe filha1 filha2 pai"]
-42 -> 44
-44 [label="L: mãe filho1 pai filho2
-R: filha1 filha2 policial prisioneira"]
-44 -> 45
-45 [label="L: filho1 pai filho2
-R: filha1 filha2 policial prisioneira mãe"]
-45 -> 46
-46 [label="L: filho1 policial filho2 prisioneira pai
-R: mãe filha1 filha2"]
-46 -> 53
-53 [label="L: prisioneira policial filho2
-R: filho1 filha1 filha2 mãe pai"]
-53 -> 65
-65 [label="L: policial prisioneira filho2 mãe pai
-R: filho1 filha1 filha2"]
-65 -> 66
-66 [label="L: mãe pai filho2
-R: filho1 filha1 filha2 policial prisioneira"]
-46 -> 54
-54 [label="L: filho1 policial prisioneira
-R: filha1 filha2 filho2 mãe pai"]
-54 -> 63
-63 [label="L: filho1 policial prisioneira mãe pai
-R: filha1 filho2 filha2"]
-63 -> 64
-64 [label="L: mãe filho1 pai
-R: filha1 filha2 policial filho2 prisioneira"]
-46 -> 55
-55 [label="L: filho1 policial filho2 prisioneira
-R: mãe filha1 pai filha2"]
-55 -> 56
-56 [label="L: filho1 policial filho2 prisioneira mãe pai
-R: filha1 filha2"]
-56 -> 57
-57 [label="L: mãe filho1 pai filho2
-R: filha1 policial prisioneira filha2"]
-56 -> 58
-58 [label="L: filho1 policial filho2 prisioneira pai
-R: mãe filha1 filha2"]
-58 -> 59
-59 [label="L: filho1 filha1 policial filho2 prisioneira mãe pai
-R: filha2"]
-59 -> 62
-62 [label="L: filho1 filha1 policial filho2 prisioneira
-R: mãe filha2 pai"]
-58 -> 60
-60 [label="L: filho1 filha2 policial filho2 prisioneira mãe pai
-R: filha1"]
-60 -> 61
-61 [label="L: filho1 filha2 policial filho2 prisioneira
-R: mãe filha1 pai"]
-45 -> 47
-47 [label="L: filho1 filha1 filho2 mãe pai
-R: filha2 policial prisioneira"]
-47 -> 51
-51 [label="L: filho1 filha1 filho2
-R: filha2 policial prisioneira mãe pai"]
-51 -> 52
-52 [label="L: filho1 filha1 policial filho2 prisioneira
-R: mãe filha2 pai"]
-45 -> 48
-48 [label="L: filho1 filha2 filho2 mãe pai
-R: filha1 policial prisioneira"]
-48 -> 49
-49 [label="L: filho1 filha2 filho2
-R: filha1 policial prisioneira mãe pai"]
-49 -> 50
-50 [label="L: filho1 filha2 policial filho2 prisioneira
-R: mãe filha1 pai"]
-30 -> 32
-32 [label="L: mãe filha1 pai
-R: filho1 filha2 policial filho2 prisioneira"]
-15 -> 17
-17 [label="L: filha2 policial prisioneira
-R: filho1 filha1 filho2 mãe pai"]
-17 -> 21
-21 [label="L: filha2 policial prisioneira mãe pai
-R: filho1 filha1 filho2"]
-21 -> 22
-22 [label="L: mãe filha2 pai
-R: filho1 filha1 policial filho2 prisioneira"]
-15 -> 18
-18 [label="L: filha1 policial prisioneira
-R: filho1 filha2 filho2 mãe pai"]
-18 -> 19
-19 [label="L: filha1 policial prisioneira mãe pai
-R: filho1 filha2 filho2"]
-19 -> 20
+R: prisioneira filho2 policial filha1 filha2
+"]
+40 -> 42 [label="-->
+pai
+"]
+42 [label="L: filho2 filho1
+R: prisioneira mãe policial filha1 pai filha2
+"]
+42 -> 43 [label="<--
+prisioneira policial
+"]
+43 [label="L: filho2 filho1 policial prisioneira
+R: mãe filha1 pai filha2
+"]
+42 -> 44 [label="<--
+pai mãe
+"]
+44 [label="L: filho2 filho1 pai mãe
+R: prisioneira policial filha1 filha2
+"]
+44 -> 45 [label="-->
+mãe
+"]
+45 [label="L: filho2 filho1 pai
+R: prisioneira mãe policial filha1 filha2
+"]
+45 -> 46 [label="<--
+prisioneira policial
+"]
+46 [label="L: filho2 prisioneira policial pai filho1
+R: mãe filha1 filha2
+"]
+46 -> 53 [label="-->
+filho1 pai
+"]
+53 [label="L: filho2 prisioneira policial
+R: mãe filha1 pai filho1 filha2
+"]
+53 -> 65 [label="<--
+mãe pai
+"]
+65 [label="L: filho2 prisioneira mãe policial pai
+R: filho1 filha1 filha2
+"]
+65 -> 66 [label="-->
+prisioneira policial
+"]
+66 [label="L: filho2 mãe pai
+R: prisioneira policial filha1 filho1 filha2
+"]
+46 -> 54 [label="-->
+filho2 pai
+"]
+54 [label="L: prisioneira filho1 policial
+R: filho2 mãe filha1 pai filha2
+"]
+54 -> 63 [label="<--
+mãe pai
+"]
+63 [label="L: prisioneira mãe policial pai filho1
+R: filho2 filha1 filha2
+"]
+63 -> 64 [label="-->
+prisioneira policial
+"]
+64 [label="L: filho1 mãe pai
+R: filho2 prisioneira policial filha1 filha2
+"]
+46 -> 55 [label="-->
+pai
+"]
+55 [label="L: filho2 filho1 prisioneira policial
+R: mãe filha1 pai filha2
+"]
+55 -> 56 [label="<--
+mãe pai
+"]
+56 [label="L: filho2 prisioneira mãe policial pai filho1
+R: filha1 filha2
+"]
+56 -> 57 [label="-->
+prisioneira policial
+"]
+57 [label="L: filho2 filho1 mãe pai
+R: prisioneira policial filha1 filha2
+"]
+56 -> 58 [label="-->
+mãe
+"]
+58 [label="L: filho2 prisioneira filho1 policial pai
+R: mãe filha1 filha2
+"]
+58 -> 59 [label="<--
+mãe filha1
+"]
+59 [label="L: filho2 prisioneira filho1 policial mãe filha1 pai
+R: filha2
+"]
+59 -> 62 [label="-->
+pai mãe
+"]
+62 [label="L: filho2 prisioneira policial filha1 filho1
+R: pai mãe filha2
+"]
+58 -> 60 [label="<--
+mãe filha2
+"]
+60 [label="L: filho2 prisioneira filho1 policial mãe pai filha2
+R: filha1
+"]
+60 -> 61 [label="-->
+mãe pai
+"]
+61 [label="L: filho2 prisioneira policial filho1 filha2
+R: mãe pai filha1
+"]
+45 -> 47 [label="<--
+mãe filha1
+"]
+47 [label="L: filho2 mãe pai filha1 filho1
+R: prisioneira policial filha2
+"]
+47 -> 51 [label="-->
+mãe pai
+"]
+51 [label="L: filho2 filho1 filha1
+R: prisioneira mãe policial pai filha2
+"]
+51 -> 52 [label="<--
+prisioneira policial
+"]
+52 [label="L: filho2 prisioneira policial filha1 filho1
+R: mãe pai filha2
+"]
+45 -> 48 [label="<--
+mãe filha2
+"]
+48 [label="L: filho2 mãe pai filho1 filha2
+R: prisioneira policial filha1
+"]
+48 -> 49 [label="-->
+mãe pai
+"]
+49 [label="L: filho2 filho1 filha2
+R: prisioneira mãe policial filha1 pai
+"]
+49 -> 50 [label="<--
+prisioneira policial
+"]
+50 [label="L: filho2 prisioneira policial filho1 filha2
+R: mãe filha1 pai
+"]
+30 -> 32 [label="<--
+mãe pai
+"]
+32 [label="L: mãe pai filha1
+R: filho2 prisioneira policial filho1 filha2
+"]
+15 -> 17 [label="-->
+mãe filha1
+"]
+17 [label="L: prisioneira policial filha2
+R: filho2 mãe pai filha1 filho1
+"]
+17 -> 21 [label="<--
+mãe pai
+"]
+21 [label="L: prisioneira mãe policial pai filha2
+R: filho2 filho1 filha1
+"]
+21 -> 22 [label="-->
+prisioneira policial
+"]
+22 [label="L: mãe pai filha2
+R: filho2 prisioneira policial filha1 filho1
+"]
+15 -> 18 [label="-->
+mãe filha2
+"]
+18 [label="L: prisioneira policial filha1
+R: filho2 mãe pai filho1 filha2
+"]
+18 -> 19 [label="<--
+mãe pai
+"]
+19 [label="L: prisioneira mãe policial filha1 pai
+R: filho2 filho1 filha2
+"]
+19 -> 20 [label="-->
+prisioneira policial
+"]
 20 [label="L: mãe filha1 pai
-R: filho1 filha2 policial filho2 prisioneira"]
-0 -> 2
-2 [label="L: filho1 filha1 policial filha2 prisioneira filho2
-R: mãe pai"]
-subgraph cluster_legend {
-label="Legenda";
-open [label="Abertos:\nL: filha2, filho1, filho2, mãe, pai\nR: filha1, policial, prisioneira\nL: filha1, filho1, filho2, mãe, pai\nR: filha2, policial, prisioneira\nL: filha1, filha2, filho2, mãe, pai\nR: filho1, policial, prisioneira\nL: filha1, filha2, filho1, policial, prisioneira\nR: filho2, mãe, pai\nL: filha1, filha2, filho2, mãe, pai, policial, prisioneira\nR: filho1\nL: filha1, filha2, mãe, pai\nR: filho1, filho2, policial, prisioneira\nL: filha1, filha2, filho1, mãe, pai\nR: filho2, policial, prisioneira\nL: filha1, filha2, filho2, mãe, pai\nR: filho1, policial, prisioneira\nL: filha1, filha2, policial, prisioneira\nR: filho1, filho2, mãe, pai\nL: filha2\nR: filha1, filho1, filho2, mãe, pai, policial, prisioneira", shape=box, color=green];
-closed [label="Fechados:\nL: filha1, filha2, filho1, filho2, mãe, pai, policial, prisioneira\nR: \nL: filha1, filha2, filho1, filho2, policial, prisioneira\nR: mãe, pai\nL: filha1, filha2, filho1, filho2, mãe, pai\nR: policial, prisioneira\nL: filha1, filha2, filho1, filho2, mãe, pai, policial\nR: prisioneira\nL: filha1, filha2, filho1, mãe, pai\nR: filho2, policial, prisioneira\nL: filha1, filha2, filho1, mãe, pai, policial, prisioneira\nR: filho2\nL: filha1, filha2, mãe, policial, prisioneira\nR: filho1, filho2, pai\nL: filha1, filha2, mãe, pai, policial, prisioneira\nR: filho1, filho2\nL: filha1, filha2, policial, prisioneira\nR: filho1, filho2, mãe, pai\nL: filha1, filha2, mãe, policial, prisioneira\nR: filho1, filho2, pai\nL: filha1, policial, prisioneira\nR: filha2, filho1, filho2, mãe, pai\nL: filha1, mãe, pai, policial, prisioneira\nR: filha2, filho1, filho2\nL: filha1, mãe, pai\nR: filha2, filho1, filho2, policial, prisioneira\nL: filha2, policial, prisioneira\nR: filha1, filho1, filho2, mãe, pai\nL: filha2, mãe, pai, policial, prisioneira\nR: filha1, filho1, filho2\nL: filha2, mãe, pai\nR: filha1, filho1, filho2, policial, prisioneira\nL: filha1, filha2, mãe\nR: filho1, filho2, pai, policial, prisioneira\nL: filha1, filha2, mãe, pai\nR: filho1, filho2, policial, prisioneira\nL: filha1, filha2\nR: filho1, filho2, mãe, pai, policial, prisioneira\nL: filha1, filha2, mãe\nR: filho1, filho2, pai, policial, prisioneira\nL: filha1\nR: filha2, filho1, filho2, mãe, pai, policial, prisioneira\nL: filha1, mãe, pai\nR: filha2, filho1, filho2, policial, prisioneira\nL: filha1, policial, prisioneira\nR: filha2, filho1, filho2, mãe, pai\nL: prisioneira\nR: filha1, filha2, filho1, filho2, mãe, pai, policial\nL: filho2, policial, prisioneira\nR: filha1, filha2, filho1, mãe, pai\nL: filho2\nR: filha1, filha2, filho1, mãe, pai, policial, prisioneira\nL: filho1, filho2, pai\nR: filha1, filha2, mãe, policial, prisioneira\nL: filho1, filho2\nR: filha1, filha2, mãe, pai, policial, prisioneira\nL: filho1, filho2, mãe, pai\nR: filha1, filha2, policial, prisioneira\nL: filho1, filho2, pai\nR: filha1, filha2, mãe, policial, prisioneira\nL: filha2, filho1, filho2, mãe, pai\nR: filha1, policial, prisioneira\nL: filha2, filho1, filho2\nR: filha1, mãe, pai, policial, prisioneira\nL: filha2, filho1, filho2, policial, prisioneira\nR: filha1, mãe, pai\nL: filha1, filho1, filho2, mãe, pai\nR: filha2, policial, prisioneira\nL: filha1, filho1, filho2\nR: filha2, mãe, pai, policial, prisioneira\nL: filha1, filho1, filho2, policial, prisioneira\nR: filha2, mãe, pai\nL: filho1, filho2, pai, policial, prisioneira\nR: filha1, filha2, mãe\nL: filho1, filho2, policial, prisioneira\nR: filha1, filha2, mãe, pai\nL: filho1, filho2, mãe, pai, policial, prisioneira\nR: filha1, filha2\nL: filho1, filho2, pai, policial, prisioneira\nR: filha1, filha2, mãe\nL: filha2, filho1, filho2, mãe, pai, policial, prisioneira\nR: filha1\nL: filha2, filho1, filho2, policial, prisioneira\nR: filha1, mãe, pai\nL: filha1, filho1, filho2, mãe, pai, policial, prisioneira\nR: filha2\nL: filha1, filho1, filho2, policial, prisioneira\nR: filha2, mãe, pai\nL: filho1, filho2, mãe, pai\nR: filha1, filha2, policial, prisioneira\nL: filho1, policial, prisioneira\nR: filha1, filha2, filho2, mãe, pai\nL: filho1, mãe, pai, policial, prisioneira\nR: filha1, filha2, filho2\nL: filho1, mãe, pai\nR: filha1, filha2, filho2, policial, prisioneira\nL: filho2, policial, prisioneira\nR: filha1, filha2, filho1, mãe, pai\nL: filho2, mãe, pai, policial, prisioneira\nR: filha1, filha2, filho1\nL: filho2, mãe, pai\nR: filha1, filha2, filho1, policial, prisioneira\nL: filho1, filho2, policial, prisioneira\nR: filha1, filha2, mãe, pai\nL: filho1\nR: filha1, filha2, filho2, mãe, pai, policial, prisioneira\nL: filho1, mãe, pai\nR: filha1, filha2, filho2, policial, prisioneira\nL: filho2, mãe, pai\nR: filha1, filha2, filho1, policial, prisioneira\nL: filho1, policial, prisioneira\nR: filha1, filha2, filho2, mãe, pai\nL: filha2, policial, prisioneira\nR: filha1, filho1, filho2, mãe, pai\nL: policial, prisioneira\nR: filha1, filha2, filho1, filho2, mãe, pai\nL: \nR: filha1, filha2, filho1, filho2, mãe, pai, policial, prisioneira", shape=box, color=red];
-}
+R: filho2 prisioneira policial filho1 filha2
+"]
+0 -> 2 [label="-->
+pai mãe
+"]
+2 [label="L: filho2 prisioneira policial filha1 filho1 filha2
+R: pai mãe
+"]
 }

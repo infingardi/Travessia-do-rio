@@ -1,5 +1,5 @@
 from anytree import Node
-from busca.helpers import initial_state, goal_state, get_next_states
+from busca.helpers import initial_state, goal_state, get_next_states, tag_solution_path
 
 def solve_dfs():
     root = Node(name=0, state=initial_state, parent=None)
@@ -22,7 +22,8 @@ def solve_dfs():
         # Verifica se é o estado objetivo
         if current_state[:2] == goal_state[:2]:
             path = [node.state for node in current_node.path]
-            return path, root, abertos, fechados
+            tag_solution_path(current_node)
+            return root
 
         # Gera próximos estados e adiciona à pilha
         next_states = get_next_states(current_state, fechados + abertos)
@@ -33,4 +34,4 @@ def solve_dfs():
             if next_state not in abertos:
                 abertos.append(next_state)
 
-    return None, None, abertos, fechados
+    return None

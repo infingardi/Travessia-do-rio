@@ -1,5 +1,5 @@
 from anytree import Node
-from busca.helpers import initial_state, goal_state, get_next_states
+from busca.helpers import initial_state, goal_state, get_next_states, tag_solution_path
 
 # Função para resolver com busca em largura
 def solve_bfs():
@@ -12,7 +12,8 @@ def solve_bfs():
         current_node.visited = True
 
         if current_node.state[:2] == goal_state[:2]:
-            return path, root
+            tag_solution_path(current_node)
+            return root
         
         current_node.possible_rules = get_next_states(current_node.state, path)
 

@@ -73,16 +73,38 @@ def get_path_from_node(node):
         node = node.parent
     return path
 
+def insert_ordered(open_nodes, node, value_extractor):
+    for i, n in enumerate(open_nodes):
+        if value_extractor(n) < value_extractor(node):
+            open_nodes.insert(i, node)
+            return
+    open_nodes.append(node)
+    
+def get_rule_from_states(state_before, state_after):
+    left, right, boat_side = state_before
+    next_left, next_right, next_boat_side = state_after
+    return (next_left - left) if boat_side == "direita" else (next_right - right)
+
 def anytree_to_dot(root, filename="tree.dot", open_states=None, closed_states=None):
+    def color_attr(*nodes):
+        if all(hasattr(node, "is_solution") and node.is_solution for node in nodes):
+            return '[color="red"]'
+        return ""
+    
     def stringify_node(node):
-        node_cost = f"\n{node.cost_global}" if hasattr(node, "cost_global") else ""
-        return f"L: {' '.join(node.state[0])}\nR: {' '.join(node.state[1])}{node_cost}"
+        node_cost = f"\n{node.weight_state}" if hasattr(node, "weight_state") else ""
+        return f"L: {' '.join(node.state[0])}\nR: {' '.join(node.state[1])}\n{node_cost}"
+    
+    def stringify_edge(node_before, node_after):
+        boat = get_rule_from_states(node_before.state, node_after.state)
+        direction = "-->" if node_after.state[2] == "direita" else "<--"
+        edge_cost = node_after.weight_path - node_before.weight_path if hasattr(node_after, "weight_path") and hasattr(node_before, "weight_path") else ""
+        return f"{direction}\n{' '.join(boat)}\n{edge_cost}"
 
     def write_tree(root, f):
-        f.write(f"{root.name} [label=\"{stringify_node(root)}\"]\n")
+        f.write(f"{root.name} [label=\"{stringify_node(root)}\"]{color_attr(root)}\n")
         for child in root.children:
-            edge_cost = f" [label=\"{child.cost_local}\"]" if hasattr(child, "cost_local") else ""
-            f.write(f"{root.name} -> {child.name}{edge_cost}\n")
+            f.write(f"{root.name} -> {child.name} [label=\"{stringify_edge(root, child)}\"]{color_attr(root, child)}\n")
             write_tree(child, f)
     
     # Nova subfunção responsável por renderizar as listas de estados abertos e fechados
@@ -111,6 +133,11 @@ def anytree_to_dot(root, filename="tree.dot", open_states=None, closed_states=No
             write_legend(f, open_states, closed_states)
         f.write("}\n")
 
+def tag_solution_path(node):
+    node_aux = node
+    while node_aux:
+        node_aux.is_solution = True
+        node_aux = node_aux.parent
 
 def export_tree(root, filename="tree", open_states=None, closed_states=None):
     # Gera o caminho do arquivo DOT dentro da pasta Trees
