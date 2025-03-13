@@ -9,7 +9,6 @@ def solve_backtracking():
 
     while stack:
         current_node, path = stack.pop()
-
         if current_node.visited and len(current_node.possible_rules) > 0:
             i += 1
             next_state, rule = current_node.possible_rules.pop(0)

@@ -18,14 +18,14 @@ if __name__ == "__main__":
     root = solve_dfs()
     export_tree(root, "profundidadeTree")
 
-    root = solve_a_star()
-    export_tree(root, "aEstrelaTree")
-
     root = solve_greedy_search()
     export_tree(root, "gulosaTree")
     
     root = solve_ordered_search()
     export_tree(root, "ordenadaTree")
+    
+    root = solve_a_star()
+    export_tree(root, "aEstrelaTree")
     # if solution:
     #     print("Solução encontrada:")
     #     for state in solution:

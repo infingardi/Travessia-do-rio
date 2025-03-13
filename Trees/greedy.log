@@ -1,0 +1,198 @@
+Tempo de execução: 0.6316999997579842 ms
+Total de iterações: 27
+Total de nós abertos: 42
+
+FECHADO
+CRITÉRIO EXTRA: 0
+L: filha1 filha2 filho1 filho2 mãe pai policial prisioneira | JANGADA
+R: 
+
+FECHADO
+CRITÉRIO EXTRA: 2
+L: filha1 filha2 filho1 filho2 mãe pai
+R: policial prisioneira | JANGADA
+
+FECHADO
+CRITÉRIO EXTRA: 2
+L: filha1 filha2 filho1 filho2 policial prisioneira
+R: mãe pai | JANGADA
+
+FECHADO
+CRITÉRIO EXTRA: 1
+L: filha1 filha2 filho1 filho2 mãe pai policial | JANGADA
+R: prisioneira
+
+FECHADO
+CRITÉRIO EXTRA: 3
+L: filha2 filho1 filho2 mãe pai
+R: filha1 policial prisioneira | JANGADA
+
+FECHADO
+CRITÉRIO EXTRA: 3
+L: filha1 filho1 filho2 mãe pai
+R: filha2 policial prisioneira | JANGADA
+
+FECHADO
+CRITÉRIO EXTRA: 3
+L: filha1 filha2 filho2 mãe pai
+R: filho1 policial prisioneira | JANGADA
+
+FECHADO
+CRITÉRIO EXTRA: 3
+L: filha1 filha2 filho1 mãe pai
+R: filho2 policial prisioneira | JANGADA
+
+FECHADO
+CRITÉRIO EXTRA: 1
+L: filha2 filho1 filho2 mãe pai policial prisioneira | JANGADA
+R: filha1
+
+CRITÉRIO EXTRA: 1
+L: filha1 filho1 filho2 mãe pai policial prisioneira | JANGADA
+R: filha2
+
+CRITÉRIO EXTRA: 1
+L: filha1 filha2 filho2 mãe pai policial prisioneira | JANGADA
+R: filho1
+
+CRITÉRIO EXTRA: 1
+L: filha1 filha2 filho1 mãe pai policial prisioneira | JANGADA
+R: filho2
+
+FECHADO
+CRITÉRIO EXTRA: 3
+L: filha2 filho1 filho2 policial prisioneira
+R: filha1 mãe pai | JANGADA
+
+FECHADO
+CRITÉRIO EXTRA: 3
+L: filho1 filho2 pai policial prisioneira
+R: filha1 filha2 mãe | JANGADA
+
+CRITÉRIO EXTRA: 1
+L: filha1 filho1 filho2 mãe pai policial prisioneira | JANGADA
+R: filha2
+
+FECHADO
+CRITÉRIO EXTRA: 2
+L: filho1 filho2 mãe pai policial prisioneira | JANGADA
+R: filha1 filha2
+
+FECHADO
+CRITÉRIO EXTRA: 4
+L: filho1 filho2 mãe pai
+R: filha1 filha2 policial prisioneira | JANGADA
+
+FECHADO
+CRITÉRIO EXTRA: 4
+L: filho1 filho2 policial prisioneira
+R: filha1 filha2 mãe pai | JANGADA
+
+FECHADO
+CRITÉRIO EXTRA: 3
+L: filho1 filho2 pai policial prisioneira | JANGADA
+R: filha1 filha2 mãe
+
+FECHADO
+CRITÉRIO EXTRA: 5
+L: filho1 filho2 pai
+R: filha1 filha2 mãe policial prisioneira | JANGADA
+
+FECHADO
+CRITÉRIO EXTRA: 5
+L: filho2 policial prisioneira
+R: filha1 filha2 filho1 mãe pai | JANGADA
+
+FECHADO
+CRITÉRIO EXTRA: 5
+L: filho1 policial prisioneira
+R: filha1 filha2 filho2 mãe pai | JANGADA
+
+CRITÉRIO EXTRA: 3
+L: filha1 filho1 filho2 mãe pai | JANGADA
+R: filha2 policial prisioneira
+
+CRITÉRIO EXTRA: 3
+L: filha2 filho1 filho2 mãe pai | JANGADA
+R: filha1 policial prisioneira
+
+FECHADO
+CRITÉRIO EXTRA: 4
+L: filho1 filho2 mãe pai | JANGADA
+R: filha1 filha2 policial prisioneira
+
+CRITÉRIO EXTRA: 3
+L: filho2 mãe pai policial prisioneira | JANGADA
+R: filha1 filha2 filho1
+
+CRITÉRIO EXTRA: 3
+L: filho1 mãe pai policial prisioneira | JANGADA
+R: filha1 filha2 filho2
+
+FECHADO
+CRITÉRIO EXTRA: 6
+L: filho1 filho2
+R: filha1 filha2 mãe pai policial prisioneira | JANGADA
+
+CRITÉRIO EXTRA: 4
+L: filho1 filho2 policial prisioneira | JANGADA
+R: filha1 filha2 mãe pai
+
+FECHADO
+CRITÉRIO EXTRA: 5
+L: filho1 filho2 pai | JANGADA
+R: filha1 filha2 mãe policial prisioneira
+
+FECHADO
+CRITÉRIO EXTRA: 7
+L: filho2
+R: filha1 filha2 filho1 mãe pai policial prisioneira | JANGADA
+
+FECHADO
+CRITÉRIO EXTRA: 7
+L: filho1
+R: filha1 filha2 filho2 mãe pai policial prisioneira | JANGADA
+
+FECHADO
+CRITÉRIO EXTRA: 5
+L: filho2 policial prisioneira | JANGADA
+R: filha1 filha2 filho1 mãe pai
+
+CRITÉRIO EXTRA: 5
+L: filho2 mãe pai | JANGADA
+R: filha1 filha2 filho1 policial prisioneira
+
+CRITÉRIO EXTRA: 5
+L: filho1 policial prisioneira | JANGADA
+R: filha1 filha2 filho2 mãe pai
+
+CRITÉRIO EXTRA: 5
+L: filho1 mãe pai | JANGADA
+R: filha1 filha2 filho2 policial prisioneira
+
+FECHADO
+CRITÉRIO EXTRA: 7
+L: prisioneira
+R: filha1 filha2 filho1 filho2 mãe pai policial | JANGADA
+
+FECHADO
+CRITÉRIO EXTRA: 6
+L: policial prisioneira | JANGADA
+R: filha1 filha2 filho1 filho2 mãe pai
+
+CRITÉRIO EXTRA: 5
+L: filha1 policial prisioneira | JANGADA
+R: filha2 filho1 filho2 mãe pai
+
+CRITÉRIO EXTRA: 5
+L: filha2 policial prisioneira | JANGADA
+R: filha1 filho1 filho2 mãe pai
+
+CRITÉRIO EXTRA: 5
+L: filho1 policial prisioneira | JANGADA
+R: filha1 filha2 filho2 mãe pai
+
+CRITÉRIO EXTRA: 8
+L: 
+R: filha1 filha2 filho1 filho2 mãe pai policial prisioneira | JANGADA
+

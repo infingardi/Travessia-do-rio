@@ -85,6 +85,10 @@ def get_rule_from_states(state_before, state_after):
     next_left, next_right, next_boat_side = state_after
     return (next_left - left) if boat_side == "direita" else (next_right - right)
 
+def stringify_state(state):
+    left, right, boat = state
+    return f"L: {' '.join(sorted(left))}{" | JANGADA" if boat == "esquerda" else ''}\nR: {' '.join(sorted(right))}{" | JANGADA" if boat == "direita" else ''}"
+
 def anytree_to_dot(root, filename="tree.dot", open_states=None, closed_states=None):
     def color_attr(*nodes):
         if all(hasattr(node, "is_solution") and node.is_solution for node in nodes):
@@ -93,7 +97,7 @@ def anytree_to_dot(root, filename="tree.dot", open_states=None, closed_states=No
     
     def stringify_node(node):
         node_cost = f"\n{node.weight_state}" if hasattr(node, "weight_state") else ""
-        return f"L: {' '.join(node.state[0])}\nR: {' '.join(node.state[1])}\n{node_cost}"
+        return f"{stringify_state(node.state)}\n{node_cost}"
     
     def stringify_edge(node_before, node_after):
         boat = get_rule_from_states(node_before.state, node_after.state)
@@ -145,10 +149,12 @@ def export_tree(root, filename="tree", open_states=None, closed_states=None):
     anytree_to_dot(root, path + ".dot", open_states, closed_states)
     Source.from_file(path + ".dot").render(path, format="png", cleanup=True)
 
-def a_star_heuristic(state):
-    """
-    Função heurística para o algoritmo A*.
-    Mede a quantidade de pessoas que ainda precisam atravessar o rio.
-    """
-    left, right, boat = state
-    return len(left)  # Quanto mais pessoas na margem inicial, maior o custo estimado
+def create_log(log, filename, criterio = None):
+    with open(f"Trees/{filename}.log", "w", encoding="utf-8") as f:
+        f.write(f"Tempo de execução: {log[2] * 1000} ms\nTotal de iterações: {log[1]}\nTotal de nós abertos: {len(log[0])}\n\n")
+        for node in log[0]:
+            if hasattr(node, "closed") and node.closed:
+                f.write("FECHADO\n")
+            if criterio is not None:
+                f.write(f"CRITÉRIO IDENTIFICADOR: {criterio(node)}\n")
+            f.write(stringify_state(node.state) + '\n\n')
