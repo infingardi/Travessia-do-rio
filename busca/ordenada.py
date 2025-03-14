@@ -29,7 +29,7 @@ def solve_ordered_search():
           all_nodes.append(node)
         current_node.closed = True
     
-    create_log((all_nodes, i, perf_counter() - start), "ordered", lambda n: n.weight_path)
+    create_log((root, i, perf_counter() - start), "ordered", lambda n: n.weight_path)
     if not solution:
         return None
     tag_solution_path(solution)

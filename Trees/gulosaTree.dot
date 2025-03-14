@@ -18,7 +18,7 @@ R: prisioneira
 
 1"][color="red"]
 3 -> 4 [label="-->
-filha1 policial
+policial filha1
 3"][color="red"]
 4 [label="L: filha2 filho1 filho2 mãe pai
 R: filha1 policial prisioneira | JANGADA
@@ -165,21 +165,21 @@ R: filha1 filha2 filho1 filho2 mãe pai policial prisioneira | JANGADA
 
 8"][color="red"]
 36 -> 38 [label="<--
-filha1 policial
+policial filha1
 -1"]
 38 [label="L: filha1 policial prisioneira | JANGADA
 R: filha2 filho1 filho2 mãe pai
 
 5"]
 36 -> 39 [label="<--
-policial filha2
+filha2 policial
 -1"]
 39 [label="L: filha2 policial prisioneira | JANGADA
 R: filha1 filho1 filho2 mãe pai
 
 5"]
 36 -> 40 [label="<--
-policial filho1
+filho1 policial
 -1"]
 40 [label="L: filho1 policial prisioneira | JANGADA
 R: filha1 filha2 filho2 mãe pai
@@ -242,7 +242,7 @@ R: filha1 filha2 filho2
 
 3"]
 3 -> 5 [label="-->
-policial filha2
+filha2 policial
 3"]
 5 [label="L: filha1 filho1 filho2 mãe pai
 R: filha2 policial prisioneira | JANGADA
@@ -256,7 +256,7 @@ R: filha2
 
 1"]
 3 -> 6 [label="-->
-policial filho1
+filho1 policial
 3"]
 6 [label="L: filha1 filha2 filho2 mãe pai
 R: filho1 policial prisioneira | JANGADA

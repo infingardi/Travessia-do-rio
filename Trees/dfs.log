@@ -1,4 +1,4 @@
-Tempo de execução: 1.707899999928486 ms
+Tempo de execução: 1.219600000013088 ms
 Total de iterações: 59
 Total de nós abertos: 69
 
@@ -9,10 +9,6 @@ R:
 FECHADO
 L: filha1 filha2 filho1 filho2 mãe pai
 R: policial prisioneira | JANGADA
-
-FECHADO
-L: filha1 filha2 filho1 filho2 policial prisioneira
-R: mãe pai | JANGADA
 
 FECHADO
 L: filha1 filha2 filho1 filho2 mãe pai policial | JANGADA
@@ -64,30 +60,6 @@ FECHADO
 L: filha1 filha2 mãe
 R: filho1 filho2 pai policial prisioneira | JANGADA
 
-FECHADO
-L: filha2 policial prisioneira
-R: filha1 filho1 filho2 mãe pai | JANGADA
-
-FECHADO
-L: filha1 policial prisioneira
-R: filha2 filho1 filho2 mãe pai | JANGADA
-
-FECHADO
-L: filha1 mãe pai policial prisioneira | JANGADA
-R: filha2 filho1 filho2
-
-FECHADO
-L: filha1 mãe pai
-R: filha2 filho1 filho2 policial prisioneira | JANGADA
-
-FECHADO
-L: filha2 mãe pai policial prisioneira | JANGADA
-R: filha1 filho1 filho2
-
-FECHADO
-L: filha2 mãe pai
-R: filha1 filho1 filho2 policial prisioneira | JANGADA
-
 L: filha1 filha2 filho1 mãe pai | JANGADA
 R: filho2 policial prisioneira
 
@@ -121,16 +93,15 @@ L: filha1 policial prisioneira | JANGADA
 R: filha2 filho1 filho2 mãe pai
 
 FECHADO
-L: filha1 mãe pai | JANGADA
-R: filha2 filho1 filho2 policial prisioneira
-
-FECHADO
 L: prisioneira
 R: filha1 filha2 filho1 filho2 mãe pai policial | JANGADA
 
 FECHADO
 L: policial prisioneira | JANGADA
 R: filha1 filha2 filho1 filho2 mãe pai
+
+L: 
+R: filha1 filha2 filho1 filho2 mãe pai policial prisioneira | JANGADA
 
 FECHADO
 L: filha2 policial prisioneira | JANGADA
@@ -161,6 +132,10 @@ L: filho1
 R: filha1 filha2 filho2 mãe pai policial prisioneira | JANGADA
 
 FECHADO
+L: filho1 mãe pai | JANGADA
+R: filha1 filha2 filho2 policial prisioneira
+
+FECHADO
 L: filho1 filho2
 R: filha1 filha2 mãe pai policial prisioneira | JANGADA
 
@@ -181,36 +156,28 @@ L: filho1 filho2 pai policial prisioneira | JANGADA
 R: filha1 filha2 mãe
 
 FECHADO
-L: filha1 filho1 filho2 mãe pai | JANGADA
-R: filha2 policial prisioneira
-
-FECHADO
-L: filha2 filho1 filho2 mãe pai | JANGADA
-R: filha1 policial prisioneira
-
-FECHADO
-L: filha2 filho1 filho2
-R: filha1 mãe pai policial prisioneira | JANGADA
-
-FECHADO
-L: filha2 filho1 filho2 policial prisioneira | JANGADA
-R: filha1 mãe pai
-
-FECHADO
-L: filha1 filho1 filho2
-R: filha2 mãe pai policial prisioneira | JANGADA
-
-FECHADO
-L: filha1 filho1 filho2 policial prisioneira | JANGADA
-R: filha2 mãe pai
-
-FECHADO
 L: filho2 policial prisioneira
 R: filha1 filha2 filho1 mãe pai | JANGADA
 
 FECHADO
+L: filho2 mãe pai policial prisioneira | JANGADA
+R: filha1 filha2 filho1
+
+FECHADO
+L: filho2 mãe pai
+R: filha1 filha2 filho1 policial prisioneira | JANGADA
+
+FECHADO
 L: filho1 policial prisioneira
 R: filha1 filha2 filho2 mãe pai | JANGADA
+
+FECHADO
+L: filho1 mãe pai policial prisioneira | JANGADA
+R: filha1 filha2 filho2
+
+FECHADO
+L: filho1 mãe pai
+R: filha1 filha2 filho2 policial prisioneira | JANGADA
 
 FECHADO
 L: filho1 filho2 policial prisioneira
@@ -233,6 +200,10 @@ L: filha1 filho1 filho2 mãe pai policial prisioneira | JANGADA
 R: filha2
 
 FECHADO
+L: filha1 filho1 filho2 policial prisioneira
+R: filha2 mãe pai | JANGADA
+
+FECHADO
 L: filha2 filho1 filho2 mãe pai policial prisioneira | JANGADA
 R: filha1
 
@@ -241,29 +212,58 @@ L: filha2 filho1 filho2 policial prisioneira
 R: filha1 mãe pai | JANGADA
 
 FECHADO
-L: filha1 filho1 filho2 policial prisioneira
-R: filha2 mãe pai | JANGADA
+L: filha1 filho1 filho2 mãe pai | JANGADA
+R: filha2 policial prisioneira
 
 FECHADO
-L: filho1 mãe pai policial prisioneira | JANGADA
-R: filha1 filha2 filho2
+L: filha1 filho1 filho2
+R: filha2 mãe pai policial prisioneira | JANGADA
 
 FECHADO
-L: filho1 mãe pai
-R: filha1 filha2 filho2 policial prisioneira | JANGADA
+L: filha1 filho1 filho2 policial prisioneira | JANGADA
+R: filha2 mãe pai
 
 FECHADO
-L: filho2 mãe pai policial prisioneira | JANGADA
-R: filha1 filha2 filho1
+L: filha2 filho1 filho2 mãe pai | JANGADA
+R: filha1 policial prisioneira
 
 FECHADO
-L: filho2 mãe pai
-R: filha1 filha2 filho1 policial prisioneira | JANGADA
+L: filha2 filho1 filho2
+R: filha1 mãe pai policial prisioneira | JANGADA
 
 FECHADO
-L: filho1 mãe pai | JANGADA
-R: filha1 filha2 filho2 policial prisioneira
+L: filha2 filho1 filho2 policial prisioneira | JANGADA
+R: filha1 mãe pai
 
-L: 
-R: filha1 filha2 filho1 filho2 mãe pai policial prisioneira | JANGADA
+FECHADO
+L: filha1 mãe pai | JANGADA
+R: filha2 filho1 filho2 policial prisioneira
+
+FECHADO
+L: filha2 policial prisioneira
+R: filha1 filho1 filho2 mãe pai | JANGADA
+
+FECHADO
+L: filha2 mãe pai policial prisioneira | JANGADA
+R: filha1 filho1 filho2
+
+FECHADO
+L: filha2 mãe pai
+R: filha1 filho1 filho2 policial prisioneira | JANGADA
+
+FECHADO
+L: filha1 policial prisioneira
+R: filha2 filho1 filho2 mãe pai | JANGADA
+
+FECHADO
+L: filha1 mãe pai policial prisioneira | JANGADA
+R: filha2 filho1 filho2
+
+FECHADO
+L: filha1 mãe pai
+R: filha2 filho1 filho2 policial prisioneira | JANGADA
+
+FECHADO
+L: filha1 filha2 filho1 filho2 policial prisioneira
+R: mãe pai | JANGADA
 

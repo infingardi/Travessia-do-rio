@@ -1,188 +1,188 @@
-Tempo de execução: 0.6056000001990469 ms
+Tempo de execução: 0.6006000000979839 ms
 Total de iterações: 25
 Total de nós abertos: 40
 
 FECHADO
-CRITÉRIO EXTRA: 0
+CRITÉRIO IDENTIFICADOR: 0
 L: filha1 filha2 filho1 filho2 mãe pai policial prisioneira | JANGADA
 R: 
 
 FECHADO
-CRITÉRIO EXTRA: 4
+CRITÉRIO IDENTIFICADOR: 4
 L: filha1 filha2 filho1 filho2 mãe pai
 R: policial prisioneira | JANGADA
 
-CRITÉRIO EXTRA: 2
-L: filha1 filha2 filho1 filho2 policial prisioneira
-R: mãe pai | JANGADA
-
 FECHADO
-CRITÉRIO EXTRA: 4
+CRITÉRIO IDENTIFICADOR: 4
 L: filha1 filha2 filho1 filho2 mãe pai policial | JANGADA
 R: prisioneira
 
 FECHADO
-CRITÉRIO EXTRA: 7
+CRITÉRIO IDENTIFICADOR: 7
 L: filha2 filho1 filho2 mãe pai
 R: filha1 policial prisioneira | JANGADA
 
 FECHADO
-CRITÉRIO EXTRA: 7
-L: filha1 filho1 filho2 mãe pai
-R: filha2 policial prisioneira | JANGADA
-
-FECHADO
-CRITÉRIO EXTRA: 7
-L: filha1 filha2 filho2 mãe pai
-R: filho1 policial prisioneira | JANGADA
-
-FECHADO
-CRITÉRIO EXTRA: 7
-L: filha1 filha2 filho1 mãe pai
-R: filho2 policial prisioneira | JANGADA
-
-FECHADO
-CRITÉRIO EXTRA: 7
+CRITÉRIO IDENTIFICADOR: 7
 L: filha2 filho1 filho2 mãe pai policial prisioneira | JANGADA
 R: filha1
 
-CRITÉRIO EXTRA: 7
-L: filha1 filho1 filho2 mãe pai policial prisioneira | JANGADA
-R: filha2
-
-CRITÉRIO EXTRA: 7
-L: filha1 filha2 filho2 mãe pai policial prisioneira | JANGADA
-R: filho1
-
-CRITÉRIO EXTRA: 7
-L: filha1 filha2 filho1 mãe pai policial prisioneira | JANGADA
-R: filho2
-
 FECHADO
-CRITÉRIO EXTRA: 9
+CRITÉRIO IDENTIFICADOR: 9
 L: filha2 filho1 filho2 policial prisioneira
 R: filha1 mãe pai | JANGADA
 
 FECHADO
-CRITÉRIO EXTRA: 9
+CRITÉRIO IDENTIFICADOR: 9
 L: filho1 filho2 pai policial prisioneira
 R: filha1 filha2 mãe | JANGADA
 
-CRITÉRIO EXTRA: 7
+CRITÉRIO IDENTIFICADOR: 7
 L: filha1 filho1 filho2 mãe pai policial prisioneira | JANGADA
 R: filha2
 
 FECHADO
-CRITÉRIO EXTRA: 8
+CRITÉRIO IDENTIFICADOR: 8
 L: filho1 filho2 mãe pai policial prisioneira | JANGADA
 R: filha1 filha2
 
 FECHADO
-CRITÉRIO EXTRA: 12
+CRITÉRIO IDENTIFICADOR: 12
 L: filho1 filho2 mãe pai
 R: filha1 filha2 policial prisioneira | JANGADA
 
 FECHADO
-CRITÉRIO EXTRA: 10
+CRITÉRIO IDENTIFICADOR: 10
 L: filho1 filho2 policial prisioneira
 R: filha1 filha2 mãe pai | JANGADA
 
 FECHADO
-CRITÉRIO EXTRA: 9
+CRITÉRIO IDENTIFICADOR: 9
 L: filho1 filho2 pai policial prisioneira | JANGADA
 R: filha1 filha2 mãe
 
 FECHADO
-CRITÉRIO EXTRA: 13
+CRITÉRIO IDENTIFICADOR: 13
 L: filho1 filho2 pai
 R: filha1 filha2 mãe policial prisioneira | JANGADA
 
-CRITÉRIO EXTRA: 11
-L: filho2 policial prisioneira
-R: filha1 filha2 filho1 mãe pai | JANGADA
-
-CRITÉRIO EXTRA: 11
-L: filho1 policial prisioneira
-R: filha1 filha2 filho2 mãe pai | JANGADA
-
-CRITÉRIO EXTRA: 11
+CRITÉRIO IDENTIFICADOR: 11
 L: filha1 filho1 filho2 mãe pai | JANGADA
 R: filha2 policial prisioneira
 
-CRITÉRIO EXTRA: 11
+CRITÉRIO IDENTIFICADOR: 11
 L: filha2 filho1 filho2 mãe pai | JANGADA
 R: filha1 policial prisioneira
 
 FECHADO
-CRITÉRIO EXTRA: 12
+CRITÉRIO IDENTIFICADOR: 12
 L: filho1 filho2 mãe pai | JANGADA
 R: filha1 filha2 policial prisioneira
 
 FECHADO
-CRITÉRIO EXTRA: 14
+CRITÉRIO IDENTIFICADOR: 14
 L: filho1 filho2
 R: filha1 filha2 mãe pai policial prisioneira | JANGADA
 
 FECHADO
-CRITÉRIO EXTRA: 14
+CRITÉRIO IDENTIFICADOR: 14
 L: filho1 filho2 policial prisioneira | JANGADA
 R: filha1 filha2 mãe pai
 
 FECHADO
-CRITÉRIO EXTRA: 13
+CRITÉRIO IDENTIFICADOR: 13
 L: filho1 filho2 pai | JANGADA
 R: filha1 filha2 mãe policial prisioneira
 
 FECHADO
-CRITÉRIO EXTRA: 15
+CRITÉRIO IDENTIFICADOR: 15
 L: filho2
 R: filha1 filha2 filho1 mãe pai policial prisioneira | JANGADA
 
 FECHADO
-CRITÉRIO EXTRA: 15
-L: filho1
-R: filha1 filha2 filho2 mãe pai policial prisioneira | JANGADA
-
-FECHADO
-CRITÉRIO EXTRA: 15
+CRITÉRIO IDENTIFICADOR: 15
 L: filho2 policial prisioneira | JANGADA
 R: filha1 filha2 filho1 mãe pai
 
-CRITÉRIO EXTRA: 13
-L: filho2 mãe pai | JANGADA
-R: filha1 filha2 filho1 policial prisioneira
-
-CRITÉRIO EXTRA: 15
-L: filho1 policial prisioneira | JANGADA
-R: filha1 filha2 filho2 mãe pai
-
-CRITÉRIO EXTRA: 13
-L: filho1 mãe pai | JANGADA
-R: filha1 filha2 filho2 policial prisioneira
-
 FECHADO
-CRITÉRIO EXTRA: 18
+CRITÉRIO IDENTIFICADOR: 18
 L: prisioneira
 R: filha1 filha2 filho1 filho2 mãe pai policial | JANGADA
 
 FECHADO
-CRITÉRIO EXTRA: 18
+CRITÉRIO IDENTIFICADOR: 18
 L: policial prisioneira | JANGADA
 R: filha1 filha2 filho1 filho2 mãe pai
 
-CRITÉRIO EXTRA: 17
+CRITÉRIO IDENTIFICADOR: 22
+L: 
+R: filha1 filha2 filho1 filho2 mãe pai policial prisioneira | JANGADA
+
+CRITÉRIO IDENTIFICADOR: 17
 L: filha1 policial prisioneira | JANGADA
 R: filha2 filho1 filho2 mãe pai
 
-CRITÉRIO EXTRA: 17
+CRITÉRIO IDENTIFICADOR: 17
 L: filha2 policial prisioneira | JANGADA
 R: filha1 filho1 filho2 mãe pai
 
-CRITÉRIO EXTRA: 17
+CRITÉRIO IDENTIFICADOR: 17
 L: filho1 policial prisioneira | JANGADA
 R: filha1 filha2 filho2 mãe pai
 
-CRITÉRIO EXTRA: 22
-L: 
-R: filha1 filha2 filho1 filho2 mãe pai policial prisioneira | JANGADA
+CRITÉRIO IDENTIFICADOR: 13
+L: filho2 mãe pai | JANGADA
+R: filha1 filha2 filho1 policial prisioneira
+
+FECHADO
+CRITÉRIO IDENTIFICADOR: 15
+L: filho1
+R: filha1 filha2 filho2 mãe pai policial prisioneira | JANGADA
+
+CRITÉRIO IDENTIFICADOR: 15
+L: filho1 policial prisioneira | JANGADA
+R: filha1 filha2 filho2 mãe pai
+
+CRITÉRIO IDENTIFICADOR: 13
+L: filho1 mãe pai | JANGADA
+R: filha1 filha2 filho2 policial prisioneira
+
+CRITÉRIO IDENTIFICADOR: 11
+L: filho2 policial prisioneira
+R: filha1 filha2 filho1 mãe pai | JANGADA
+
+CRITÉRIO IDENTIFICADOR: 11
+L: filho1 policial prisioneira
+R: filha1 filha2 filho2 mãe pai | JANGADA
+
+FECHADO
+CRITÉRIO IDENTIFICADOR: 7
+L: filha1 filho1 filho2 mãe pai
+R: filha2 policial prisioneira | JANGADA
+
+CRITÉRIO IDENTIFICADOR: 7
+L: filha1 filho1 filho2 mãe pai policial prisioneira | JANGADA
+R: filha2
+
+FECHADO
+CRITÉRIO IDENTIFICADOR: 7
+L: filha1 filha2 filho2 mãe pai
+R: filho1 policial prisioneira | JANGADA
+
+CRITÉRIO IDENTIFICADOR: 7
+L: filha1 filha2 filho2 mãe pai policial prisioneira | JANGADA
+R: filho1
+
+FECHADO
+CRITÉRIO IDENTIFICADOR: 7
+L: filha1 filha2 filho1 mãe pai
+R: filho2 policial prisioneira | JANGADA
+
+CRITÉRIO IDENTIFICADOR: 7
+L: filha1 filha2 filho1 mãe pai policial prisioneira | JANGADA
+R: filho2
+
+CRITÉRIO IDENTIFICADOR: 2
+L: filha1 filha2 filho1 filho2 policial prisioneira
+R: mãe pai | JANGADA
 

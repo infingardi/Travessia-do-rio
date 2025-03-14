@@ -40,6 +40,6 @@ def solve_dfs():
     
     if solution:
         tag_solution_path(solution)
-        create_log((all_nodes, i, perf_counter() - start), "dfs")
+        create_log((root, i, perf_counter() - start), "dfs")
         return root
     return None

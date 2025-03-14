@@ -1,0 +1,94 @@
+Tempo de execução: 0.5347000000028856 ms
+Total de iterações: 29
+Total de nós abertos: 30
+
+L: filha1 filha2 filho1 filho2 mãe pai policial prisioneira | JANGADA
+R: 
+
+L: filha1 filha2 filho1 filho2 mãe pai
+R: policial prisioneira | JANGADA
+
+L: filha1 filha2 filho1 filho2 mãe pai policial | JANGADA
+R: prisioneira
+
+L: filha2 filho1 filho2 mãe pai
+R: filha1 policial prisioneira | JANGADA
+
+L: filha2 filho1 filho2 mãe pai policial prisioneira | JANGADA
+R: filha1
+
+L: filha2 filho1 filho2 policial prisioneira
+R: filha1 mãe pai | JANGADA
+
+L: filho1 filho2 pai policial prisioneira
+R: filha1 filha2 mãe | JANGADA
+
+L: filha1 filho1 filho2 mãe pai policial prisioneira | JANGADA
+R: filha2
+
+L: filha1 filho1 filho2 mãe pai
+R: filha2 policial prisioneira | JANGADA
+
+L: filha1 filho1 filho2 policial prisioneira
+R: filha2 mãe pai | JANGADA
+
+L: filho1 filho2 mãe pai policial prisioneira | JANGADA
+R: filha1 filha2
+
+L: filho1 filho2 mãe pai
+R: filha1 filha2 policial prisioneira | JANGADA
+
+L: filho1 filho2 policial prisioneira
+R: filha1 filha2 mãe pai | JANGADA
+
+L: filho1 filho2 pai policial prisioneira | JANGADA
+R: filha1 filha2 mãe
+
+L: filho1 filho2 pai
+R: filha1 filha2 mãe policial prisioneira | JANGADA
+
+L: filha1 filho1 filho2 mãe pai | JANGADA
+R: filha2 policial prisioneira
+
+L: filha1 filho1 filho2
+R: filha2 mãe pai policial prisioneira | JANGADA
+
+L: filha1 filho1 filho2 policial prisioneira | JANGADA
+R: filha2 mãe pai
+
+L: filha2 filho1 filho2 mãe pai | JANGADA
+R: filha1 policial prisioneira
+
+L: filha2 filho1 filho2
+R: filha1 mãe pai policial prisioneira | JANGADA
+
+L: filha2 filho1 filho2 policial prisioneira | JANGADA
+R: filha1 mãe pai
+
+L: filho1 filho2 mãe pai | JANGADA
+R: filha1 filha2 policial prisioneira
+
+L: filho1 filho2
+R: filha1 filha2 mãe pai policial prisioneira | JANGADA
+
+L: filho1 filho2 policial prisioneira | JANGADA
+R: filha1 filha2 mãe pai
+
+L: filho1 filho2 pai | JANGADA
+R: filha1 filha2 mãe policial prisioneira
+
+L: filho2
+R: filha1 filha2 filho1 mãe pai policial prisioneira | JANGADA
+
+L: filho2 policial prisioneira | JANGADA
+R: filha1 filha2 filho1 mãe pai
+
+L: prisioneira
+R: filha1 filha2 filho1 filho2 mãe pai policial | JANGADA
+
+L: policial prisioneira | JANGADA
+R: filha1 filha2 filho1 filho2 mãe pai
+
+L: 
+R: filha1 filha2 filho1 filho2 mãe pai policial prisioneira | JANGADA
+

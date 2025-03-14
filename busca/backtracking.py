@@ -1,13 +1,15 @@
+from time import perf_counter
 from anytree import Node
-from busca.helpers import initial_state, goal_state, get_next_states, tag_solution_path
+from busca.helpers import create_log, initial_state, goal_state, get_next_states, tag_solution_path
 
 # Função para resolver com backtracking
 def solve_backtracking():
+    start = perf_counter()
     root = Node(name=0, state=initial_state, visited=False, rule=None, possible_rules=None)
     stack = [(root, [initial_state])]
     i = 0
-
-    while stack:
+    solution = None
+    while stack and not solution:
         current_node, path = stack.pop()
         if current_node.visited and len(current_node.possible_rules) > 0:
             i += 1
@@ -24,8 +26,8 @@ def solve_backtracking():
         current_node.visited = True
 
         if current_node.state[:2] == goal_state[:2]:
-            tag_solution_path(current_node)
-            return root
+            solution = current_node
+            continue
         
         current_node.possible_rules = get_next_states(current_node.state, path)
 
@@ -37,4 +39,9 @@ def solve_backtracking():
         else:
             stack.append((current_node.parent, path))
 
-    return None
+    if not solution:
+        return None
+    tag_solution_path(solution)
+    create_log((root, i, perf_counter() - start), "backtracking")
+    
+    return root

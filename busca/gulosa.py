@@ -29,7 +29,7 @@ def solve_greedy_search():
           all_nodes.append(node)
         current_node.closed = True
     
-    create_log((all_nodes, i, perf_counter() - start), "greedy", lambda n: n.weight_state)
+    create_log((root, i, perf_counter() - start), "greedy", lambda n: n.weight_state)
     if not solution:
         return None
     tag_solution_path(solution)

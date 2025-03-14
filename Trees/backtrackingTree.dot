@@ -15,7 +15,7 @@ policial
 R: prisioneira
 "][color="red"]
 2 -> 3 [label="-->
-filha1 policial
+policial filha1
 "][color="red"]
 3 [label="L: filha2 filho1 filho2 mãe pai
 R: filha1 policial prisioneira | JANGADA

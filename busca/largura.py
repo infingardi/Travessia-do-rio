@@ -30,6 +30,6 @@ def solve_bfs():
     if not solution:
         return None
     tag_solution_path(solution)
-    create_log((all_nodes, i, perf_counter() - start), "bfs")
+    create_log((root, i, perf_counter() - start), "bfs")
     return root
 

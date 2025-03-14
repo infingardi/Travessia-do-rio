@@ -150,9 +150,15 @@ def export_tree(root, filename="tree", open_states=None, closed_states=None):
     Source.from_file(path + ".dot").render(path, format="png", cleanup=True)
 
 def create_log(log, filename, criterio = None):
+    nodes = []
+    def iterate_tree(node):
+        nodes.append(node)
+        for child in node.children:
+            iterate_tree(child)
+    iterate_tree(log[0])
     with open(f"Trees/{filename}.log", "w", encoding="utf-8") as f:
-        f.write(f"Tempo de execução: {log[2] * 1000} ms\nTotal de iterações: {log[1]}\nTotal de nós abertos: {len(log[0])}\n\n")
-        for node in log[0]:
+        f.write(f"Tempo de execução: {log[2] * 1000} ms\nTotal de iterações: {log[1]}\nTotal de nós abertos: {len(nodes)}\n\n")
+        for node in nodes:
             if hasattr(node, "closed") and node.closed:
                 f.write("FECHADO\n")
             if criterio is not None:
